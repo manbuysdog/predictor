@@ -8,6 +8,7 @@ var stylus = require('stylus');
 
 var index = require('./app_server/routes/index');
 var users = require('./app_server/routes/users');
+var teams = require('./app_server/routes/teams');
 
 var app = express();
 
@@ -31,6 +32,7 @@ app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css'));
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/teams', teams);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
